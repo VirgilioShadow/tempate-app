@@ -1,0 +1,157 @@
+main {
+  min-height: 80vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Main page styling */
+.main-page {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #eaedff;
+}
+
+/* Design Grid */
+.design-grid {
+  display: grid;
+  width: calc(100vw * (1120 / 1440)); /* Scales the grid width */
+  max-width: 1120px; /* Maximum grid width */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center the grid horizontally */
+  grid-template-columns: repeat(
+    12,
+    calc((100vw * (900 / 1440)) / 12)
+  ); /* Scaled column width */
+  gap: calc(100vw * (20 / 1440)); /* Scaled gutter width */
+  pointer-events: none;
+  z-index: 1000;
+  background-color: transparent; /* Optional for visualization */
+  /* background-color: rgba(255, 84, 84, 0.5); Optional for visualization */
+}
+
+.grid-column {
+  background-color: rgba(255, 84, 84, 0.5);
+  height: 100%;
+}
+
+@media (min-width: 1441px) {
+  .design-grid {
+    width: 1120px;
+    grid-template-columns: repeat(
+      12,
+      75px
+    ); /* Fixed column width at larger screens */
+    gap: 20px; /* Fixed gutter width at larger screens */
+  }
+}
+
+/* Bootstrap work area */
+.custom-container {
+  position: relative;
+  z-index: 10;
+  width: calc(100vw * (1120 / 1440)); /* Scale based on viewport width */
+  max-width: 1120px; /* Maximum width */
+  margin: 0 auto; /* Center the container */
+  border: 2px solid #32cd32; /* Visual border for development */
+  box-sizing: border-box; /* Include border in the element's total width and height */
+}
+
+.custom-container .row {
+  margin-right: -10px; /* Half of your gutter to align with the container */
+  margin-left: -10px; /* Half of your gutter to align with the container */
+}
+
+.custom-container .col {
+  padding-right: 10px; /* Half of your gutter for inner column padding */
+  padding-left: 10px; /* Half of your gutter for inner column padding */
+}
+
+@media (min-width: 1441px) {
+  .custom-container {
+    width: 1120px; /* Fixed width for screens wider than 1440px */
+  }
+}
+
+/* Main page background */
+.angled-background {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 40vh;
+  background-color: #003358; /* Bootstrap primary blue, adjust as needed */
+  padding: 50px;
+  clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 100%);
+  /* Adjust the last two points to change the angle and the height of the colored area */
+}
+
+.bottom-background {
+  position: absolute;
+  z-index: 2;
+  bottom: 0; /* Position it at the bottom of the container */
+  left: 0;
+  width: 100vw;
+  height: 20vh; /* Height of the colored area */
+  background-color: #003358; /* Bootstrap primary blue, adjust as needed */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  /* This creates a rectangle covering the full area of the element */
+}
+
+/* stale css below */
+/* stale css below */
+/* stale css below */
+
+/* navbar bootstrap variable override */
+:root {
+  --bs-dark-rgb: 86, 85, 119;
+}
+
+/* Sidebar (CustomOffCanvas styling */
+.custom-offcanvas {
+  background-color: #343a40;
+  width: 300px !important;
+}
+
+.shift-content {
+  margin-left: 300px;
+}
+.shifted {
+  margin-left: 45px;
+}
+
+.partially-open-offcanvas {
+  transition: transform 0.3s ease-in-out;
+}
+.fully-open-offcanvas {
+  transform: translateX(-87%) !important;
+  transition: transform 0.3s ease-in-out;
+}
+
+.custom-button {
+  background: transparent;
+  border: none;
+  min-width: auto;
+  margin-left: auto;
+}
+
+.custom-datepicker-popper {
+  margin-left: -225px;
+}
